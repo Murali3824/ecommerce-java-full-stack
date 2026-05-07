@@ -15,7 +15,8 @@ public class BannerController {
     private BannerService bannerService;
 
     @PostMapping("/admin")
-    public ResponseEntity<Banner> createBanner(@RequestParam String title, @RequestParam String redirectUrl, @RequestParam String type, @RequestParam MultipartFile file) throws Exception {
+    public ResponseEntity<Banner> createBanner(@RequestParam String title, @RequestParam String redirectUrl,
+            @RequestParam String type, @RequestParam MultipartFile file) throws Exception {
         return ResponseEntity.ok(bannerService.createBanner(title, redirectUrl, type, file));
     }
 }

@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
+// mani edited
+// hi mi name is mani
+// jai telangana
 @RestController
 @RequestMapping("/analytics")
 public class AnalyticsController {
@@ -15,6 +18,7 @@ public class AnalyticsController {
 
     @GetMapping("/admin")
     public ResponseEntity<Map<String, Object>> getStats() {
+
         return ResponseEntity.ok(analyticsService.getDashboardStats());
     }
 }
