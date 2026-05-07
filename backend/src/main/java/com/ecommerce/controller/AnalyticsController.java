@@ -1,9 +1,20 @@
 package com.ecommerce.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ecommerce.service.AnalyticsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/analytics")
 public class AnalyticsController {
+
+    @Autowired
+    private AnalyticsService analyticsService;
+
+    @GetMapping("/admin")
+    public ResponseEntity<Map<String, Object>> getStats() {
+        return ResponseEntity.ok(analyticsService.getDashboardStats());
+    }
 }
