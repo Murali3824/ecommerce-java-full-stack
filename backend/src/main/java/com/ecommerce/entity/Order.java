@@ -9,8 +9,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Order extends BaseAuditEntity {
+    public enum Status {
+        PENDING, CONFIRMED, SHIPPED, DELIVERED, CANCELLED
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String orderNumber;
+    
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.PENDING;
 }
