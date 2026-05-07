@@ -8,4 +8,5 @@ const Cart = () => {
   );
 };
 
+//#endregion
 export default Cart;
