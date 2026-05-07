@@ -1,9 +1,15 @@
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
-const ProtectedRoute = () => {
-  const isAuth = true; // Replace with auth hook
-  return isAuth ? <Outlet /> : <Navigate to="/login" />;
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem('token');
+  const location = useLocation();
+
+  if (!token) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
 };
 
 export default ProtectedRoute;
