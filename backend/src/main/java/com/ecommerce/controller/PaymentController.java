@@ -13,7 +13,8 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/verify")
-    public ResponseEntity<Boolean> verify(@RequestParam String orderId, @RequestParam String paymentId, @RequestParam String signature) {
+    public ResponseEntity<Boolean> verify(@RequestParam String orderId, @RequestParam String paymentId,
+            @RequestParam String signature) {
         return ResponseEntity.ok(paymentService.verifySignature(orderId, paymentId, signature));
     }
 }

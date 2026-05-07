@@ -15,6 +15,7 @@ public class AnalyticsController {
 
     @GetMapping("/admin")
     public ResponseEntity<Map<String, Object>> getStats() {
+
         return ResponseEntity.ok(analyticsService.getDashboardStats());
     }
 }
