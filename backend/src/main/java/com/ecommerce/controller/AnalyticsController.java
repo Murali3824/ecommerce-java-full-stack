@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
+// hi mi name is mani
+// jai telangana
 @RestController
 @RequestMapping("/analytics")
 public class AnalyticsController {
